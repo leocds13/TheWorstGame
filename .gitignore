@@ -1,3 +1,4 @@
 # Godot 4+ specific ignores
 .godot/
+add a new line here
 /android/
