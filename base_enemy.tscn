@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://brxxeibp58axm"]
+
+[ext_resource type="Script" uid="uid://cj55px5gjrhw2" path="res://base_enemy.gd" id="1_vaaym"]
+[ext_resource type="Script" uid="uid://dekvui8rxrhos" path="res://path_follow_2d.gd" id="2_72wxb"]
+[ext_resource type="Texture2D" uid="uid://dj7fge4qw4vux" path="res://icon.svg" id="3_nxij1"]
+
+[sub_resource type="Curve2D" id="Curve2D_nxij1"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -64, -133, -42.32468, -602.2407, 42.32468, 602.2407, 362, -148, 0, 0, 0, 0, 19.254791, -45.33877, 0, 0, 0, 0, -41, 357, 0, 0, 0, 0, -65, -126, 0, 0, 0, 0, -64, -133)
+}
+point_count = 6
+
+[node name="base_enemy" type="Node2D"]
+position = Vector2(6, 37.999992)
+script = ExtResource("1_vaaym")
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(42.9274, 39.275246)
+scale = Vector2(1.6604215, 1.0356435)
+curve = SubResource("Curve2D_nxij1")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-64, -133)
+rotation = -1.0146475
+script = ExtResource("2_72wxb")
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D"]
+position = Vector2(-15.411205, -12.742405)
+scale = Vector2(0.7591999, 0.8008999)
+texture = ExtResource("3_nxij1")
