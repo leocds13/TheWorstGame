@@ -1,0 +1,84 @@
+[gd_scene load_steps=5 format=3 uid="uid://cm1a3bulra2p1"]
+
+[ext_resource type="Script" uid="uid://dgqcupp7e5ldx" path="res://scripts/title_screen.gd" id="1_fgkus"]
+[ext_resource type="Theme" uid="uid://cts6pfqyx4jg2" path="res://themes/THEME_headings.tres" id="2_sa3yf"]
+[ext_resource type="Script" uid="uid://djqg17yj8hqtf" path="res://scripts/title_buttons.gd" id="3_s4lrb"]
+
+[sub_resource type="Theme" id="Theme_sa3yf"]
+default_font_size = 20
+
+[node name="Title_Screen" type="CanvasLayer"]
+script = ExtResource("1_fgkus")
+
+[node name="Screen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Game_Title" type="RichTextLabel" parent="Screen"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -281.5
+offset_top = -190.0
+offset_right = 281.5
+offset_bottom = -94.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_sa3yf")
+bbcode_enabled = true
+text = "Plants VS Robots"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button_Holder" type="VBoxContainer" parent="Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -156.0
+offset_top = -22.0
+offset_right = 156.0
+offset_bottom = 106.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Start" type="Button" parent="Screen/Button_Holder"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = SubResource("Theme_sa3yf")
+disabled = true
+text = "Start"
+icon_alignment = 1
+script = ExtResource("3_s4lrb")
+
+[node name="Settings" type="Button" parent="Screen/Button_Holder"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = SubResource("Theme_sa3yf")
+disabled = true
+text = "Settings"
+icon_alignment = 1
+script = ExtResource("3_s4lrb")
+
+[node name="Exit" type="Button" parent="Screen/Button_Holder"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = SubResource("Theme_sa3yf")
+text = "Exit"
+icon_alignment = 1
+script = ExtResource("3_s4lrb")
