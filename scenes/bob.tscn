@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cy3sxu1ay8gy2"]
+
+[ext_resource type="Script" uid="uid://dbuy80xmdj7b2" path="res://scripts/bob.gd" id="1_75wmj"]
+[ext_resource type="Texture2D" uid="uid://bne4esvi3pvtd" path="res://sprites/enemies/enemy_animated_flying1.png" id="2_kf1ye"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gqs4f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kf1ye")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kf1ye"]
+size = Vector2(14.0021, 14)
+
+[node name="Bob" type="PathFollow2D"]
+rotation = -0.00104712
+script = ExtResource("1_75wmj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_gqs4f")
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
+collision_mask = 2048
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
+shape = SubResource("RectangleShape2D_kf1ye")

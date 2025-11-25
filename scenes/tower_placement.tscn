@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c518kgaamhp7d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8hjyl"]
+radius = 42.0119
+
+[node name="Tower_Placement" type="Node2D"]
+
+[node name="Mouse_Detection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mouse_Detection"]
+shape = SubResource("CircleShape2D_8hjyl")

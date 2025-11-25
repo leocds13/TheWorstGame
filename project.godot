@@ -12,12 +12,21 @@ config_version=5
 
 config/name="The Worst Game"
 run/main_scene="uid://brxxeibp58axm"
-config/features=PackedStringArray("4.5", "GL Compatibility")
+config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://scripts/global.gd"
 
 [dotnet]
 
 project/assembly_name="The Worst Game"
+
+[layer_names]
+
+2d_physics/layer_1="enemy"
+2d_physics/layer_12="goal"
 
 [rendering]
 

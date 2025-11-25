@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://de822lradbwip"]
+
+[ext_resource type="Script" uid="uid://bwq6qim637q0l" path="res://scripts/level_1.gd" id="1_014kd"]
+[ext_resource type="PackedScene" uid="uid://c518kgaamhp7d" path="res://scenes/tower_placement.tscn" id="2_rus8k"]
+[ext_resource type="PackedScene" uid="uid://cy3sxu1ay8gy2" path="res://scenes/bob.tscn" id="3_rus8k"]
+[ext_resource type="PackedScene" uid="uid://chf1wbcqnjfqp" path="res://scenes/wave_goal.tscn" id="4_5xbjy"]
+
+[sub_resource type="Curve2D" id="Curve2D_4nkto"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 105, 334, 0, 0, 0, 0, 1060, 333)
+}
+point_count = 2
+
+[node name="Level_1" type="Node2D"]
+script = ExtResource("1_014kd")
+
+[node name="Lose_Label" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 563.0
+offset_top = 107.0
+offset_right = 603.0
+offset_bottom = 147.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Wave_Goal" parent="." instance=ExtResource("4_5xbjy")]
+position = Vector2(1077, 333)
+
+[node name="Tower_Placement" parent="." instance=ExtResource("2_rus8k")]
+position = Vector2(332, 433)
+
+[node name="Tower_Placement2" parent="." instance=ExtResource("2_rus8k")]
+position = Vector2(583, 234)
+
+[node name="Tower_Placement3" parent="." instance=ExtResource("2_rus8k")]
+position = Vector2(858, 430)
+
+[node name="Wave_Path" type="Path2D" parent="."]
+curve = SubResource("Curve2D_4nkto")
+
+[node name="Bob" parent="Wave_Path" instance=ExtResource("3_rus8k")]
+position = Vector2(105, 334)
+scale = Vector2(2, 2)

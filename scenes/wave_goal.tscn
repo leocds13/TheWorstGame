@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://chf1wbcqnjfqp"]
+
+[ext_resource type="Script" uid="uid://8n733dgf80kv" path="res://scripts/wave_goal.gd" id="1_a2veo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h5n6h"]
+radius = 27.074
+
+[node name="Wave_Goal" type="Node2D"]
+script = ExtResource("1_a2veo")
+
+[node name="Enemy_Detection" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 2048
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Detection"]
+shape = SubResource("CircleShape2D_h5n6h")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -43.0
+offset_top = -71.0
+offset_right = 39.0
+offset_bottom = -31.0
+bbcode_enabled = true
+text = "Wave Goal"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
