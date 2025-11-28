@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccpwwiy66fm0c"]
+
+[ext_resource type="Script" uid="uid://b1q0e4x5ugwb6" path="res://scripts/spawn_enemies.gd" id="1_efgkh"]
+[ext_resource type="PackedScene" uid="uid://dtfqmuhrete7n" path="res://scenes/enemy.tscn" id="2_hqw4b"]
+
+[sub_resource type="Curve2D" id="Curve2D_hqw4b"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -374, -177, 0, 0, 0, 0, -263, -177, 0, 0, 0, 0, -263, 153, 0, 0, 0, 0, -140, 140, 0, 0, 0, 0, -143, -173, 0, 0, 0, 0, -28, -178, 0, 0, 0, 0, -30, 151, 0, 0, 0, 0, 110, 149, 0, 0, 0, 0, 100, -157, 0, 0, 0, 0, 98, -226, 0, 0, 0, 0, -370, -220, 0, 0, 0, 0, -374, -177)
+}
+point_count = 12
+
+[node name="test" type="Path2D"]
+position = Vector2(379, 208)
+curve = SubResource("Curve2D_hqw4b")
+script = ExtResource("1_efgkh")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.144
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-94, -37)
+zoom = Vector2(1.605, 1.605)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -112.0
+offset_top = -61.0
+offset_right = -72.0
+offset_bottom = -21.0
+metadata/_edit_use_anchors_ = true
+
+[node name="PathFollow2D" parent="." instance=ExtResource("2_hqw4b")]
+position = Vector2(-374, -177)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="The Worst Game"
+run/main_scene="uid://b08w1hrdrym13"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://sprites/icon.svg"
+
+[autoload]
+
+global="*res://scripts/global_script.gd"
 
 [dotnet]
 
@@ -20,5 +25,6 @@ project/assembly_name="The Worst Game"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
