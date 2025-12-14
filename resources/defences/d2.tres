@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="DefenceAttr" load_steps=4 format=3 uid="uid://djy7s237gmvdq"]
+
+[ext_resource type="Script" uid="uid://b058sr5c8d4h0" path="res://scenes/Defence_attr.gd" id="1_006tq"]
+[ext_resource type="Texture2D" uid="uid://dj7fge4qw4vux" path="res://icon.svg" id="2_lmj3m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_006tq"]
+size = Vector2(50, 50)
+
+[resource]
+script = ExtResource("1_006tq")
+name = "D2"
+texture = ExtResource("2_lmj3m")
+colorMod = Color(0.3529412, 1, 0.3529412, 1)
+coll_shape = SubResource("RectangleShape2D_006tq")
+transform = Transform2D(0.4, 0, 0, 0.4, 0, 0)
+metadata/_custom_type_script = "uid://b058sr5c8d4h0"

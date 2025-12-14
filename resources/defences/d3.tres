@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="DefenceAttr" load_steps=4 format=3 uid="uid://dni1xop5s1kpb"]
+
+[ext_resource type="Script" uid="uid://b058sr5c8d4h0" path="res://scenes/Defence_attr.gd" id="1_7valp"]
+[ext_resource type="Texture2D" uid="uid://dj7fge4qw4vux" path="res://icon.svg" id="2_62v88"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_62v88"]
+radius = 40.0
+
+[resource]
+script = ExtResource("1_7valp")
+name = "D3"
+texture = ExtResource("2_62v88")
+colorMod = Color(0.3529412, 0.3529412, 1, 1)
+coll_shape = SubResource("CircleShape2D_62v88")
+transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
+metadata/_custom_type_script = "uid://b058sr5c8d4h0"

@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cd7vgs0dhux2k"]
+[gd_scene load_steps=6 format=3 uid="uid://cd7vgs0dhux2k"]
 
 [ext_resource type="Script" uid="uid://g0r0ngysvy7u" path="res://scenes/level.gd" id="1_2q6dc"]
+[ext_resource type="PackedScene" uid="uid://dt3c856ergi4i" path="res://scenes/defence.tscn" id="2_w7c3h"]
 
 [sub_resource type="Curve2D" id="Curve2D_rd3vj"]
 _data = {
@@ -10,6 +11,8 @@ point_count = 33
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2q6dc"]
 size = Vector2(20, 86)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7c3h"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_2q6dc")
@@ -29,5 +32,17 @@ position = Vector2(1162, 355)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndPath"]
 shape = SubResource("RectangleShape2D_2q6dc")
 
+[node name="DefenceRef" parent="." instance=ExtResource("2_w7c3h")]
+unique_name_in_owner = true
+
+[node name="Defences" type="Node2D" parent="."]
+
+[node name="ClickableArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickableArea"]
+shape = SubResource("RectangleShape2D_w7c3h")
+
 [connection signal="timeout" from="WaveStartTimer" to="." method="_on_wave_start_timer_timeout"]
 [connection signal="body_entered" from="EndPath" to="." method="_on_end_path_body_entered"]
+[connection signal="input_event" from="ClickableArea" to="." method="_on_clickable_area_input_event"]

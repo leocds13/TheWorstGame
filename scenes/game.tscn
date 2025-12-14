@@ -1,7 +1,34 @@
-[gd_scene load_steps=2 format=3 uid="uid://cyv7q1ht2sgby"]
+[gd_scene load_steps=7 format=3 uid="uid://cyv7q1ht2sgby"]
 
 [ext_resource type="PackedScene" uid="uid://cd7vgs0dhux2k" path="res://scenes/level.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://y16xd5128lu1" path="res://scenes/UI/ui.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://dt3c856ergi4i" path="res://scenes/defence.tscn" id="3_lbhrr"]
+[ext_resource type="Resource" uid="uid://d186cfnc8kik8" path="res://resources/defences/d1.tres" id="4_lbhrr"]
+[ext_resource type="Resource" uid="uid://djy7s237gmvdq" path="res://resources/defences/d2.tres" id="5_p57ef"]
+[ext_resource type="Resource" uid="uid://dni1xop5s1kpb" path="res://resources/defences/d3.tres" id="6_u5sy4"]
 
 [node name="Game" type="Node2D"]
 
+[node name="CanvasLayer" parent="." instance=ExtResource("2_yqjtg")]
+
 [node name="Level" parent="." instance=ExtResource("1_uwrxv")]
+
+[node name="Defence" parent="." instance=ExtResource("3_lbhrr")]
+modulate = Color(1, 0.3529412, 0.3529412, 1)
+position = Vector2(585, 83)
+attributes = ExtResource("4_lbhrr")
+
+[node name="Defence2" parent="." instance=ExtResource("3_lbhrr")]
+modulate = Color(0.3529412, 1, 0.3529412, 1)
+position = Vector2(872, 82)
+attributes = ExtResource("5_p57ef")
+
+[node name="Defence3" parent="." instance=ExtResource("3_lbhrr")]
+modulate = Color(0.3529412, 0.3529412, 1, 1)
+position = Vector2(597, 201)
+attributes = ExtResource("6_u5sy4")
+
+[node name="Defence4" parent="." instance=ExtResource("3_lbhrr")]
+modulate = Color(0.3529412, 0.3529412, 1, 1)
+position = Vector2(164, 168)
+attributes = ExtResource("6_u5sy4")

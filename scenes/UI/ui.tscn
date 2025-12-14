@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://y16xd5128lu1"]
+
+[ext_resource type="PackedScene" uid="uid://btculkbv1q7w4" path="res://scenes/UI/defence_button.tscn" id="1_suays"]
+[ext_resource type="Texture2D" uid="uid://dj7fge4qw4vux" path="res://icon.svg" id="2_f54a5"]
+[ext_resource type="Resource" uid="uid://d186cfnc8kik8" path="res://resources/defences/d1.tres" id="2_yb1mt"]
+[ext_resource type="Resource" uid="uid://djy7s237gmvdq" path="res://resources/defences/d2.tres" id="4_7e3k0"]
+[ext_resource type="Resource" uid="uid://dni1xop5s1kpb" path="res://resources/defences/d3.tres" id="5_m41qk"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="Marging" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_edit_use_anchors_ = true
+
+[node name="FoldableContainer" type="FoldableContainer" parent="Marging"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Marging/FoldableContainer"]
+layout_mode = 2
+
+[node name="DefenceButton" parent="Marging/FoldableContainer/HBoxContainer" instance=ExtResource("1_suays")]
+modulate = Color(1, 0.3529412, 0.3529412, 1)
+layout_mode = 2
+tooltip_text = "D1"
+icon = ExtResource("2_f54a5")
+attributes = ExtResource("2_yb1mt")
+
+[node name="DefenceButton2" parent="Marging/FoldableContainer/HBoxContainer" instance=ExtResource("1_suays")]
+modulate = Color(0.3529412, 1, 0.3529412, 1)
+layout_mode = 2
+tooltip_text = "D2"
+icon = ExtResource("2_f54a5")
+attributes = ExtResource("4_7e3k0")
+
+[node name="DefenceButton3" parent="Marging/FoldableContainer/HBoxContainer" instance=ExtResource("1_suays")]
+modulate = Color(0.3529412, 0.3529412, 1, 1)
+layout_mode = 2
+tooltip_text = "D3"
+icon = ExtResource("2_f54a5")
+attributes = ExtResource("5_m41qk")
